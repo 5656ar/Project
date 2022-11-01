@@ -8,7 +8,7 @@ import csv
 from bs4 import BeautifulSoup
 import requests
 
-engine = sqlalchemy.create_engine('postgresql://webadmin:MDDnfo15110@node38352-bunnapon.proen.app.ruk-com.cloud:11234/work')
+engine = sqlalchemy.create_engine('postgresql://webadmin:MDDnfo15110@node38352-bunnapon.proen.app.ruk-com.cloud:5432/work')
 Base = declarative_base()
 
 
