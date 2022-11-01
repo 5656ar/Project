@@ -63,9 +63,9 @@ while True:
     for i in courses_thai:
         thai_list.append(i.string)
 
-    print(euro_list)
-    print(yen_list)
-    print(thai_list)
+    print('euro Currencies',euro_list)
+    print('japan Currencies',yen_list)
+    print('Thai Currencies',thai_list)
 
     Session = sessionmaker(bind=engine)
     session = Session()
