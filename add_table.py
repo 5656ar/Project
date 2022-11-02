@@ -8,7 +8,7 @@ import csv
 from bs4 import BeautifulSoup
 import requests
 
-engine = sqlalchemy.create_engine('postgresql://webadmin:MDDnfo15110@node38352-bunnapon.proen.app.ruk-com.cloud:5432/work')
+engine = sqlalchemy.create_engine('postgresql://webadmin:MDDnfo15110@node38352-bunnapon.proen.app.ruk-com.cloud:11234/work')
 Base = declarative_base()
 
 
@@ -41,8 +41,8 @@ class Data_thai(Base):
     change = Column(String, nullable=False)
     change_per = Column(String, nullable=False)
 
-while True:
 
+while True:
     Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
 
@@ -53,7 +53,7 @@ while True:
     courses_euro = soup.find_all('fin-streamer',{'data-symbol':'EURUSD=X'})
     for i in courses_euro:
         euro_list.append(i.string)
-        
+            
 
     courses_yen = soup.find_all('fin-streamer',{'data-symbol':'JPY=X'})
     for i in courses_yen:
@@ -63,9 +63,7 @@ while True:
     for i in courses_thai:
         thai_list.append(i.string)
 
-    print('euro Currencies',euro_list)
-    print('japan Currencies',yen_list)
-    print('Thai Currencies',thai_list)
+
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -81,9 +79,12 @@ while True:
     session.add(commit_data2)
 
     session.commit()
+    print('succesfully update')
+    time.sleep(5)
 
-    print("Succesfull update")
-    time.sleep(10)
+
+    
+
 
 
 # result = session.query(Students_table.f_name).all()
