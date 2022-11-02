@@ -78,7 +78,11 @@ while True:
     session.add(commit_data1)
     session.add(commit_data2)
 
+    
     session.commit()
+    print(euro_list)
+    print(yen_list)
+    print(thai_list)
     print('succesfully update')
     time.sleep(5)
 
