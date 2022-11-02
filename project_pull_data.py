@@ -17,7 +17,7 @@ change_data = soup.find_all('fin-streamer',{'data-symbol':'EURUSD=X'})
 for i in change_data:
     euro_list.append(i.string)
 
-print(euro_list[0])
+print(euro_list)
 
 
 course_list = []

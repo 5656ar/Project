@@ -1,3 +1,4 @@
+
 import psycopg2
 
 connection= psycopg2.connect(user ='webadmin',
@@ -23,34 +24,35 @@ all_cur2 = Cursor2.fetchall()
 all_cur3 = Cursor3.fetchall()
 
 list_euro = []
-list_thai = []
+list_thai_c = []
 list_japan = []
 
 all_money = []
 
-for i in all_cur:
-    print(all_cur)
-    print(i)
-    for z in i:
-        list_euro.append(z)
-
-all_money.append(list_euro[0])
-    
 for i in all_cur2:
-    print(i)
+    print(all_cur2)
     for z in i:
-        list_thai.append(z)
-    
-all_money.append(list_thai[0])
+        list_thai_c.append(z)
+print(list_thai_c)
 
-for i in all_cur3:
-    print(i)
-    for z in i:
-        list_japan.append(z)
+# all_money.append(list_euro[0])
     
-all_money.append(list_japan[0])
+# for i in all_cur2:
+#     print(i)
+#     for z in i:
+#         list_thai.append(z)
+    
+# all_money.append(list_thai[0])
 
-print(all_money)
-        
+# for i in all_cur3:
+#     print(i)
+#     for z in i:
+#         list_japan.append(z)
+    
+# all_money.append(list_japan[0])
+
+# print(all_money)
+
+
 
 

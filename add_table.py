@@ -43,7 +43,7 @@ class Data_thai(Base):
 
 
 while True:
-    Base.metadata.drop_all(engine)
+    
     Base.metadata.create_all(engine)
 
     euro_list = []
@@ -84,7 +84,7 @@ while True:
     print(yen_list)
     print(thai_list)
     print('succesfully update')
-    time.sleep(5)
+    time.sleep(36000)
 
 
     
